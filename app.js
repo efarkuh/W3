@@ -7,12 +7,17 @@ const acceptButton = document.getElementById("accept");
 let currentImageIndex = 0;
 
 function openFullImg(pic){
+    if (window.innerWidth > 768) {
     fullImgBox.style.display = "flex";
     fullImg.src = pic;
     currentImageIndex = imageUrls.indexOf(pic);
     // Find the description for the current image and update it
     const imageDescription = imageInfo.find(img => img.src === pic).description;
     document.getElementById('imageDescription').textContent = imageDescription;
+} else {
+    
+}
+
 }
 
 

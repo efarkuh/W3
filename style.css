@@ -56,6 +56,12 @@
     .photo-gallery{
         flex-direction: column;
     }
+    .fullImg {
+        display: none !important; /* Forcefully hides the full-screen element */
+    }
+
+
+
 }
 
 .fullImg{

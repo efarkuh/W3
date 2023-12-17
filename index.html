@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <script src="./app.js" defer></script>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <title>Photo Gallery</title>
+
+</head>
+<body>
+
+    <div class="fullImg" id="fullImgBox">
+        <button id="backBtn" onclick="showPreviousImage()">&lt;</button>
+        <img src="" alt="fullImg" id="fullImg">
+        <span onclick="closeFullImg()">X</span>
+        <button id="nextBtn" onclick="showNextImage()">></button>
+        
+
+    </div>
+    
+
+    <div class="container">
+
+        <h1 class="title">Responsive Photo Gallery</h1>
+
+        <div class="photo-gallery">
+
+            <div class="column">
+                <div class="photo">
+                    <img src="https://source.unsplash.com/SYx3UCHZJlo" alt="image1" onclick="openFullImg(this.src)">
+                </div>
+                <div class="photo">
+                    <img src="https://source.unsplash.com/okVXy9tG3KY" alt="image2" onclick="openFullImg(this.src)">
+                </div>
+                <div class="photo">
+                    <img src="https://source.unsplash.com/wtBex4wQw60" alt="image3" onclick="openFullImg(this.src)">
+                </div>
+            </div>
+            <div class="column">
+                <div class="photo">
+                    <img src="https://source.unsplash.com/7XAM0J3dNQM" alt="image4" onclick="openFullImg(this.src)">
+                </div>
+                <div class="photo">
+                    <img src="https://source.unsplash.com/m82uh_vamhg" alt="image5" onclick="openFullImg(this.src)">
+                </div>
+                <div class="photo">
+                    <img src="https://source.unsplash.com/KMn4VEeEPR8" alt="image6" onclick="openFullImg(this.src)">
+                </div>
+            </div>
+            <div class="column">
+                <div class="photo">
+                    <img src="https://source.unsplash.com/koy6FlCCy5s" alt="image7" onclick="openFullImg(this.src)">
+                </div>
+                <div class="photo">
+                    <img src="https://source.unsplash.com/TLD6iCOlyb0" alt="image8" onclick="openFullImg(this.src)">
+                </div>
+                <div class="photo">
+                    <img src="https://source.unsplash.com/3bh3elC0D7M" alt="image9" onclick="openFullImg(this.src)">
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="cookieNotice">
+        <h2>We use cookies</h2>
+        <p>This website collects cookies to deliver better user experience</p>
+        <button id="accept" class="approve">Accept</button>
+        <button id="decline" class="reject">Reject</button>
+    </div>
+    
+</body>
+</html>

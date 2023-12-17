@@ -1,0 +1,151 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat';
+}
+
+.container{
+    max-width: 1224px;
+    width: 90%;
+    margin: auto;
+    padding: 40px 0;
+}
+
+.title{
+    margin-bottom: 2rem;
+}
+
+.photo-gallery{
+    display: flex;
+    gap: 20px;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* .column:nth-of-type(1){
+    display: flex;
+    flex-direction: column;
+    gap: 158px;
+}
+.column:nth-of-type(2){
+    display: flex;
+    flex-direction: column;
+    gap: 79px;
+} */
+
+.photo img{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.photo img:hover{
+    transform: scale(0.9) rotate(-5deg);
+    border-radius: 20px;
+    box-shadow: 0 32px 75px rgba(68, 77, 136, 0.2);
+}
+
+
+@media(max-width:768px){
+    .photo-gallery{
+        flex-direction: column;
+    }
+}
+
+.fullImg{
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+
+.fullImg img{
+    max-width:500px;
+    max-height:90vh;
+    width: auto;
+    height: auto;
+    
+}
+
+.fullImg span{
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* cookie notice styles */
+#cookieNotice {
+    /* positioning styles */
+    /* position: absolute; this style doesn't make the cookie notice stay in place when we scroll  */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+     /* make it look good styles */
+    background-color: #000;
+    color: #fff;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    border-radius: 10px;
+}
+
+/* button styles */
+button {
+    border: none;
+    border-radius: 4px;
+    margin-top: 8px;
+    padding: 8px 8px;
+    cursor: pointer;
+}
+
+.reject {
+    background-color: #f00;
+  }
+
+.approve {
+    background-color: #0f0;
+  }
+
+#nextBtn {
+    color: white; /* Choose a color that fits your design */
+    background: transparent;
+    font-size: 30px;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    margin-left: 10 px;
+    /* Add more styling as needed */
+}
+
+#backBtn {
+    color: white; /* Choose a color that fits your design */
+    background: transparent;
+    font-size: 30px;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    margin-right: 10 px;
+    /* Add more styling as needed */
+}
+
+/* sellecting photos on the image gallery */
+.photo img.focused {
+    outline: 3px solid blue; /* Example style for focused image */
+}

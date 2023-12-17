@@ -10,6 +10,9 @@ function openFullImg(pic){
     fullImgBox.style.display = "flex";
     fullImg.src = pic;
     currentImageIndex = imageUrls.indexOf(pic);
+    // Find the description for the current image and update it
+    const imageDescription = imageInfo.find(img => img.src === pic).description;
+    document.getElementById('imageDescription').textContent = imageDescription;
 }
 
 
@@ -67,15 +70,28 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
+// Modified showNextImage function
 function showNextImage() {
-    currentImageIndex = (currentImageIndex + 1) % imageUrls.length;
-    fullImg.src = imageUrls[currentImageIndex];
+    const nextIndex = (currentImageIndex + 1) % imageInfo.length;
+    updateImageAndDescription(nextIndex);
 }
 
+// Modified showPreviousImage function
 function showPreviousImage() {
-    currentImageIndex = (currentImageIndex - 1 + imageUrls.length) % imageUrls.length;
-    fullImg.src = imageUrls[currentImageIndex];
+    const prevIndex = (currentImageIndex - 1 + imageInfo.length) % imageInfo.length;
+    updateImageAndDescription(prevIndex);
 }
+
+// function showNextImage() {
+//     currentImageIndex = (currentImageIndex + 1) % imageUrls.length;
+//     fullImg.src = imageUrls[currentImageIndex];
+// }
+
+// function showPreviousImage() {
+//     currentImageIndex = (currentImageIndex - 1 + imageUrls.length) % imageUrls.length;
+//     fullImg.src = imageUrls[currentImageIndex];
+// }
+
 function closeFullImg(){
     fullImgBox.style.display = "none";
 }
@@ -111,3 +127,24 @@ galleryImages.forEach((img, index) => {
         updateFocus(index);
     });
 });
+
+// Photo Description
+const imageInfo = [
+    { src: 'https://source.unsplash.com/SYx3UCHZJlo', description: "Don't forget your sunglasses" },
+    { src: 'https://source.unsplash.com/okVXy9tG3KY', description: "Waves" },
+    { src: 'https://source.unsplash.com/wtBex4wQw60', description: "Dream car" },
+    { src: "https://source.unsplash.com/7XAM0J3dNQM", description: "Way to heaven" },
+    { src: 'https://source.unsplash.com/m82uh_vamhg', description: "The pink flamingo" },
+    { src: 'https://source.unsplash.com/KMn4VEeEPR8', description: "Sunset" },
+    { src: 'https://source.unsplash.com/koy6FlCCy5s', description: "The flowers" },
+    { src: 'https://source.unsplash.com/TLD6iCOlyb0', description: "Do you want an Icecream?" },
+    { src: 'https://source.unsplash.com/3bh3elC0D7M', description: "Few umbrellas" },
+];
+
+// New function to update image and description
+function updateImageAndDescription(index) {
+    currentImageIndex = index;
+    const imageData = imageInfo[currentImageIndex];
+    fullImg.src = imageData.src;
+    document.getElementById('imageDescription').textContent = imageData.description;
+}

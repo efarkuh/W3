@@ -12,11 +12,15 @@
 <body>
 
     <div class="fullImg" id="fullImgBox">
-        <button id="backBtn" onclick="showPreviousImage()">&lt;</button>
-        <img src="" alt="fullImg" id="fullImg">
         <span onclick="closeFullImg()">X</span>
+        <button id="backBtn" onclick="showPreviousImage()">&lt;</button>
+        <div class="imageContainer">  
+            <img src="" alt="fullImg" id="fullImg">
+            <p id="imageDescription"></p> <!-- this line for the photo description -->
+        </div>
         <button id="nextBtn" onclick="showNextImage()">></button>
-        
+
+
 
     </div>
     

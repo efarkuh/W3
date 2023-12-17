@@ -149,3 +149,16 @@ button {
 .photo img.focused {
     outline: 3px solid blue; /* Example style for focused image */
 }
+
+#imageDescription {
+    color: white;  
+    padding: 10px;
+    text-align: center;
+    margin-top: 10px; 
+}
+
+.imageContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
